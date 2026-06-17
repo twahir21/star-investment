@@ -2,16 +2,16 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Shield, 
-  Car, 
-  Anchor, 
-  Briefcase, 
-  FileText, 
-  Layers, 
-  CheckCircle2, 
-  ArrowRight, 
-  Compass, 
+import {
+  Shield,
+  Car,
+  Anchor,
+  Briefcase,
+  FileText,
+  Layers,
+  CheckCircle2,
+  ArrowRight,
+  Compass,
   Maximize2,
   Users,
   Activity,
@@ -19,6 +19,7 @@ import {
   Radio,
   ChevronRight
 } from 'lucide-react';
+import AnimatedHero from '@/components/ui/AnimeHero';
 
 // --- DATA CONFIGURATIONS ---
 const capabilities = [
@@ -91,29 +92,22 @@ export default function ServicesPage() {
 
   return (
     <main className="bg-white text-gray-900 overflow-x-hidden pt-16">
-      
+
       {/* 1. EDITORIAL HERO BANNER */}
-      <section className="relative pt-36 pb-24 bg-zinc-950 text-white border-b border-zinc-900">
-        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px]" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-6">
-            <span className="text-zinc-500 text-xs font-bold tracking-widest uppercase border border-zinc-800 bg-zinc-900/50 px-4 py-1.5 rounded-full inline-block">
-              Capability Index
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]">
-              Engineered for <span className="text-zinc-400">Precision Logistics</span>
-            </h1>
-            <p className="text-zinc-400 text-sm sm:text-base font-light leading-relaxed max-w-2xl">
-              Star Investment executes specialized logistics, protocol management, and investment facilitation systems across the Zanzibar Archipelago. Explore our core operational capabilities.
-            </p>
-          </div>
-        </div>
-      </section>
+      <AnimatedHero
+        topText="Capability Index"
+        title={
+          <>
+            Engineered for <span className="text-zinc-400">Precision Logistics</span>
+          </>
+        }
+        description="Star Investment executes specialized logistics, protocol management, and investment facilitation systems across the Zanzibar Archipelago. Explore our core operational capabilities."
+      />
 
       {/* 2. CORE CAPABILITIES SYSTEM (INTERACTIVE MATRIX) */}
       <section className="py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="space-y-3 mb-16 text-center lg:text-left">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900">Capability Architecture</h2>
             <p className="text-zinc-500 text-sm max-w-xl">
@@ -122,7 +116,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
+
             {/* Left Control Panel: List Selection */}
             <div className="lg:col-span-5 space-y-3">
               {capabilities.map((item) => {
@@ -132,16 +126,14 @@ export default function ServicesPage() {
                   <button
                     key={item.id}
                     onClick={() => setSelectedService(item.id)}
-                    className={`w-full text-left p-5 rounded-xl border transition-all flex items-center justify-between gap-4 group ${
-                      isSelected 
-                        ? 'bg-zinc-950 text-white border-zinc-950 shadow-lg' 
+                    className={`w-full text-left p-5 rounded-xl border transition-all flex items-center justify-between gap-4 group ${isSelected
+                        ? 'bg-zinc-950 text-white border-zinc-950 shadow-lg'
                         : 'bg-zinc-50 text-zinc-800 border-zinc-100 hover:bg-zinc-100/70 hover:border-zinc-300'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`p-2.5 rounded-lg shrink-0 transition-colors ${
-                        isSelected ? 'bg-white text-zinc-950' : 'bg-zinc-900 text-white'
-                      }`}>
+                      <div className={`p-2.5 rounded-lg shrink-0 transition-colors ${isSelected ? 'bg-white text-zinc-950' : 'bg-zinc-900 text-white'
+                        }`}>
                         <Icon size={18} />
                       </div>
                       <div>
@@ -151,9 +143,8 @@ export default function ServicesPage() {
                         </p>
                       </div>
                     </div>
-                    <ChevronRight size={16} className={`shrink-0 transition-transform ${
-                      isSelected ? 'text-white translate-x-1' : 'text-zinc-400 group-hover:translate-x-0.5'
-                    }`} />
+                    <ChevronRight size={16} className={`shrink-0 transition-transform ${isSelected ? 'text-white translate-x-1' : 'text-zinc-400 group-hover:translate-x-0.5'
+                      }`} />
                   </button>
                 );
               })}
@@ -218,7 +209,7 @@ export default function ServicesPage() {
       <section className="py-24 bg-zinc-950 text-white relative overflow-hidden border-t border-zinc-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.03),transparent_40%)]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           <div className="max-w-3xl space-y-4 mb-20">
             <span className="text-[10px] font-extrabold tracking-widest text-zinc-500 uppercase flex items-center gap-2">
               <Radio size={12} className="text-zinc-400 animate-pulse" /> Command Center Matrix
@@ -231,8 +222,8 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {/* Background connecting line pattern for desktop screens */}
-            <div className="hidden lg:block absolute top-16 left-8 right-8 h-[1px] bg-zinc-800 z-0" />
-            
+            <div className="hidden lg:block absolute top-16 left-8 right-8 h-px bg-zinc-800 z-0" />
+
             {workflows.map((flow, i) => (
               <div key={i} className="space-y-6 bg-zinc-900/30 p-6 rounded-xl border border-zinc-900/60 lg:border-none lg:p-0 relative z-10 group">
                 <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center font-mono font-bold text-sm tracking-wider shadow-inner group-hover:border-zinc-500 transition-colors">
@@ -251,9 +242,9 @@ export default function ServicesPage() {
       {/* 4. TECHNICAL SLA CAPABILITIES MATRIX */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            
+
             {/* Left side informational copy */}
             <div className="lg:col-span-5 space-y-6">
               <div className="space-y-2">
@@ -277,7 +268,7 @@ export default function ServicesPage() {
 
             {/* Right side strict grid blocks */}
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              
+
               <div className="p-6 border border-zinc-100 bg-zinc-50/50 rounded-2xl space-y-3">
                 <Activity size={18} className="text-zinc-950" />
                 <h4 className="font-bold text-sm text-zinc-900">Telemetry Optimization</h4>
@@ -325,7 +316,7 @@ export default function ServicesPage() {
               Transmit your deployment guidelines into our secure configuration router. Our command center strategists will organize your operational layout.
             </p>
           </div>
-          
+
           <div className="pt-2 flex flex-col sm:flex-row gap-4 justify-center max-w-xs mx-auto sm:max-w-none">
             <button className="flex items-center justify-center gap-2 bg-zinc-950 hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-md transition-all active:scale-98">
               Open Consultation Desk

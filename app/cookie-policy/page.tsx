@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Cookie, ArrowUpRight, ShieldCheck, Clock, EyeOff, Table } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowUpRight,  EyeOff } from 'lucide-react';
+import AnimatedHero from '@/components/ui/AnimeHero';
 
 const cookieSections = [
   { id: "introduction", title: "1. Core Framework" },
@@ -55,30 +55,23 @@ export default function CookiePolicyPage() {
 
   return (
     <main className="bg-white text-gray-900 min-h-screen pt-16 selection:bg-zinc-950 selection:text-white">
-      
+
       {/* 1. HERO META HEADER */}
-      <section className="bg-zinc-50 border-b border-zinc-200/80 py-20 sm:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 bg-zinc-950 text-white px-3 py-1 rounded-md text-[10px] font-mono uppercase tracking-widest">
-              <Cookie size={12} /> Data Tracking Disclosure
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-950">
-              Cookie & Telemetry Policy
-            </h1>
-            <p className="text-zinc-500 text-xs sm:text-sm font-mono flex items-center gap-4 pt-2 flex-wrap">
-              <span className="flex items-center gap-1"><Clock size={12} /> Updated: June 2026</span>
-              <span className="flex items-center gap-1"><ShieldCheck size={12} /> Transparent Optimization Metrics</span>
-            </p>
-          </div>
-        </div>
-      </section>
+      <AnimatedHero
+        topText="Data Tracking Disclosure"
+        title={
+          <>
+            Cookie & Telemetry Policy
+          </>
+        }
+        description="Latest Update: June 2026. Transparent Optimization Metrics"
+      />
 
       {/* 2. SPLIT ARCHITECTURE */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            
+
             <aside className="lg:col-span-3 lg:sticky lg:top-28 space-y-6 hidden lg:block">
               <div className="space-y-1">
                 <p className="text-[10px] font-extrabold uppercase tracking-widest text-zinc-400">Data Architecture</p>
@@ -91,11 +84,10 @@ export default function CookiePolicyPage() {
                     <button
                       key={sec.id}
                       onClick={() => scrollToSection(sec.id)}
-                      className={`text-left text-xs font-semibold py-2.5 pl-4 border-l -ml-[1px] transition-all tracking-wide ${
-                        isActive 
-                          ? 'border-zinc-950 text-zinc-950 font-bold bg-zinc-50 rounded-r-md' 
+                      className={`text-left text-xs font-semibold py-2.5 pl-4 border-l -ml-px transition-all tracking-wide ${isActive
+                          ? 'border-zinc-950 text-zinc-950 font-bold bg-zinc-50 rounded-r-md'
                           : 'border-transparent text-zinc-400 hover:text-zinc-900 hover:border-zinc-300'
-                      }`}
+                        }`}
                     >
                       {sec.title}
                     </button>
@@ -114,7 +106,7 @@ export default function CookiePolicyPage() {
 
             {/* Right Side Policy Documentation */}
             <div className="lg:col-span-9 space-y-16 max-w-3xl">
-              
+
               {/* INTRODUCTION */}
               <article id="introduction" className="space-y-4 scroll-mt-32">
                 <h2 className="text-xl font-bold tracking-tight text-zinc-950">1. Core Framework Statement</h2>
@@ -151,7 +143,7 @@ export default function CookiePolicyPage() {
                 <p className="text-zinc-500 text-xs sm:text-sm font-light">
                   Review the mechanical breakdown of variables stored inside your active web environment.
                 </p>
-                
+
                 <div className="overflow-x-auto pt-2">
                   <table className="w-full text-left border-collapse text-xs sm:text-sm">
                     <thead>
@@ -215,7 +207,7 @@ export default function CookiePolicyPage() {
                   <p>
                     Our data storage structures undergo recurring reviews to ensure full regulatory alignment with local personal protection mandates. For specific compliance reports or deep database inquiries, route communication to our administrative post:
                   </p>
-                  
+
                   {/* Digital Cookie Card Info */}
                   <div className="mt-6 p-6 border border-zinc-200 bg-zinc-50 rounded-xl space-y-3 max-w-md">
                     <div>

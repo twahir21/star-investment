@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { FileText, ArrowUpRight, Scale, Clock, ShieldCheck, HelpCircle } from 'lucide-react';
+import { ArrowUpRight, HelpCircle } from 'lucide-react';
+import AnimatedHero from '@/components/ui/AnimeHero';
 
 const termsSections = [
   { id: "definitions", title: "1. Definitions" },
@@ -60,30 +60,23 @@ export default function TermsConditionsPage() {
 
   return (
     <main className="bg-white text-gray-900 min-h-screen pt-16 selection:bg-zinc-950 selection:text-white">
-      
+
       {/* 1. HERO META HEADER */}
-      <section className="bg-zinc-50 border-b border-zinc-200/80 py-20 sm:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 bg-zinc-950 text-white px-3 py-1 rounded-md text-[10px] font-mono uppercase tracking-widest">
-              <Scale size={12} /> Master Service Agreement
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-950">
-              Terms & Conditions
-            </h1>
-            <p className="text-zinc-500 text-xs sm:text-sm font-mono flex items-center gap-4 pt-2 flex-wrap">
-              <span className="flex items-center gap-1"><Clock size={12} /> Effective Execution Date: June 2026</span>
-              <span className="flex items-center gap-1"><ShieldCheck size={12} /> Binding Legal Framework</span>
-            </p>
-          </div>
-        </div>
-      </section>
+      <AnimatedHero
+        topText="Master Service Agreement"
+        title={
+          <>
+            Engineered for <span className="text-zinc-400">Terms & Conditions</span>
+          </>
+        }
+        description="Effective Execution Date: June 2026. Binding Legal Framework"
+      />
 
       {/* 2. CORE LAYOUT GRAPH */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            
+
             {/* Left Column: Sticky Table of Contents */}
             <aside className="lg:col-span-3 lg:sticky lg:top-28 space-y-6 hidden lg:block">
               <div className="space-y-1">
@@ -97,11 +90,10 @@ export default function TermsConditionsPage() {
                     <button
                       key={sec.id}
                       onClick={() => scrollToSection(sec.id)}
-                      className={`text-left text-xs font-semibold py-2.5 pl-4 border-l -ml-[1px] transition-all tracking-wide ${
-                        isActive 
-                          ? 'border-zinc-950 text-zinc-950 font-bold bg-zinc-50 rounded-r-md' 
+                      className={`text-left text-xs font-semibold py-2.5 pl-4 border-l -ml-px transition-all tracking-wide ${isActive
+                          ? 'border-zinc-950 text-zinc-950 font-bold bg-zinc-50 rounded-r-md'
                           : 'border-transparent text-zinc-400 hover:text-zinc-900 hover:border-zinc-300'
-                      }`}
+                        }`}
                     >
                       {sec.title}
                     </button>
@@ -120,7 +112,7 @@ export default function TermsConditionsPage() {
 
             {/* Right Column: Deep Readable Terms Typography */}
             <div className="lg:col-span-9 space-y-16 max-w-3xl">
-              
+
               {/* DEFINITIONS */}
               <article id="definitions" className="space-y-4 scroll-mt-32">
                 <h2 className="text-xl font-bold tracking-tight text-zinc-950">1. Definitions & Interpretation</h2>
@@ -260,7 +252,7 @@ export default function TermsConditionsPage() {
                   <p>
                     To request formal addendums, query custom framework parameters, or initiate legal filings, please target our corporate compliance center:
                   </p>
-                  
+
                   {/* Digital Terms Card Info */}
                   <div className="mt-6 p-6 border border-zinc-200 bg-zinc-50 rounded-xl space-y-3 max-w-md">
                     <div>

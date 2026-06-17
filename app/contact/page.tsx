@@ -2,20 +2,20 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Building2, 
-  Phone, 
-  Mail, 
-  MessageSquare, 
-  Clock, 
-  AlertCircle, 
-  ChevronDown, 
-  MapPin, 
-  Compass, 
+import {
+  Building2,
+  Phone,
+  Mail,
+  MessageSquare,
+  Clock,
+  AlertCircle,
+  ChevronDown,
+  Compass,
   Send,
   CheckCircle2,
   PhoneCall
 } from 'lucide-react';
+import AnimatedHero from '@/components/ui/AnimeHero';
 
 // --- DATA CONFIGURATIONS ---
 const contactCards = [
@@ -52,7 +52,7 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', org: '', email: '', phone: '', service: '', msg: '' });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  
+
   // Accordion State
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
@@ -63,7 +63,7 @@ export default function ContactPage() {
     if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) tempErrors.email = "Valid corporate routing email needed.";
     if (!formData.service) tempErrors.service = "Select an operational architectural line.";
     if (!formData.msg.trim()) tempErrors.msg = "Mission requirements statement cannot be blank.";
-    
+
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
@@ -81,33 +81,26 @@ export default function ContactPage() {
 
   return (
     <main className="bg-white text-gray-900 overflow-x-hidden pt-16">
-      
+
       {/* 1. HERO BANNER */}
-      <section className="relative pt-32 pb-20 bg-zinc-950 text-white border-b border-zinc-900">
-        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
-            <span className="text-zinc-500 text-xs font-bold tracking-widest uppercase border border-zinc-800 bg-zinc-900/50 px-4 py-1.5 rounded-full">
-              Communications Center
-            </span>
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mt-6 mb-4">
-              Synchronize Your <span className="text-zinc-400">Operations</span>
-            </h1>
-            <p className="text-zinc-400 text-sm sm:text-base font-light leading-relaxed">
-              Connect directly with our 24/7 operational planning desk. Establish safe, encrypted, and highly synchronized transport and regulatory execution pathways.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <AnimatedHero
+        topText="Communications Center"
+        title={
+          <>
+            Synchronize Your <span className="text-zinc-400">Operations</span>
+          </>
+        }
+        description="Connect directly with our 24/7 operational planning desk. Establish safe, encrypted, and highly synchronized transport and regulatory execution pathways."
+      />
 
       {/* 2. GRID DETAILS & FORM ARCHITECTURE */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            
+
             {/* Left Column: Cards + Hours */}
             <div className="lg:col-span-5 space-y-12">
-              
+
               {/* Contact Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {contactCards.map((card) => {
@@ -160,28 +153,28 @@ export default function ContactPage() {
               <AnimatePresence mode="wait">
                 {!isSubmitted ? (
                   <motion.form onSubmit={handleSubmit} className="space-y-6" exit={{ opacity: 0, y: -10 }}>
-                    
+
                     {/* Grid Inputs */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      
+
                       {/* Full Name */}
                       <div className="relative group">
-                        <input 
+                        <input
                           type="text" id="name" placeholder=" " value={formData.name}
-                          onChange={(e) => setFormData({...formData, name: e.target.value})}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           className={`peer w-full bg-zinc-50 border ${errors.name ? 'border-red-500 focus:border-red-500' : 'border-zinc-200 focus:border-zinc-950'} rounded-xl px-4 pt-6 pb-2 text-sm outline-none transition-all`}
                         />
                         <label htmlFor="name" className="absolute left-4 top-4 text-xs font-medium text-zinc-400 pointer-events-none transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-zinc-500 origin-left transform scale-100 peer-focus:scale-90 select-none">
                           Full Name
                         </label>
-                        {errors.name && <p className="text-[10px] text-red-500 font-medium mt-1 flex items-center gap-1"><AlertCircle size={10}/> {errors.name}</p>}
+                        {errors.name && <p className="text-[10px] text-red-500 font-medium mt-1 flex items-center gap-1"><AlertCircle size={10} /> {errors.name}</p>}
                       </div>
 
                       {/* Organization */}
                       <div className="relative group">
-                        <input 
+                        <input
                           type="text" id="org" placeholder=" " value={formData.org}
-                          onChange={(e) => setFormData({...formData, org: e.target.value})}
+                          onChange={(e) => setFormData({ ...formData, org: e.target.value })}
                           className="peer w-full bg-zinc-50 border border-zinc-200 focus:border-zinc-950 rounded-xl px-4 pt-6 pb-2 text-sm outline-none transition-all"
                         />
                         <label htmlFor="org" className="absolute left-4 top-4 text-xs font-medium text-zinc-400 pointer-events-none transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-zinc-500 origin-left transform scale-100 peer-focus:scale-90 select-none">
@@ -191,22 +184,22 @@ export default function ContactPage() {
 
                       {/* Corporate Email */}
                       <div className="relative group">
-                        <input 
+                        <input
                           type="email" id="email" placeholder=" " value={formData.email}
-                          onChange={(e) => setFormData({...formData, email: e.target.value})}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           className={`peer w-full bg-zinc-50 border ${errors.email ? 'border-red-500 focus:border-red-500' : 'border-zinc-200 focus:border-zinc-950'} rounded-xl px-4 pt-6 pb-2 text-sm outline-none transition-all`}
                         />
                         <label htmlFor="email" className="absolute left-4 top-4 text-xs font-medium text-zinc-400 pointer-events-none transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-zinc-500 origin-left transform scale-100 peer-focus:scale-90 select-none">
                           Corporate Email
                         </label>
-                        {errors.email && <p className="text-[10px] text-red-500 font-medium mt-1 flex items-center gap-1"><AlertCircle size={10}/> {errors.email}</p>}
+                        {errors.email && <p className="text-[10px] text-red-500 font-medium mt-1 flex items-center gap-1"><AlertCircle size={10} /> {errors.email}</p>}
                       </div>
 
                       {/* Phone Contact */}
                       <div className="relative group">
-                        <input 
+                        <input
                           type="tel" id="phone" placeholder=" " value={formData.phone}
-                          onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           className="peer w-full bg-zinc-50 border border-zinc-200 focus:border-zinc-950 rounded-xl px-4 pt-6 pb-2 text-sm outline-none transition-all"
                         />
                         <label htmlFor="phone" className="absolute left-4 top-4 text-xs font-medium text-zinc-400 pointer-events-none transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-zinc-500 origin-left transform scale-100 peer-focus:scale-90 select-none">
@@ -218,9 +211,9 @@ export default function ContactPage() {
 
                     {/* Service Needed Dropdown Custom Simulation styling */}
                     <div className="relative">
-                      <select 
+                      <select
                         id="service" value={formData.service}
-                        onChange={(e) => setFormData({...formData, service: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                         className={`w-full bg-zinc-50 border ${errors.service ? 'border-red-500' : 'border-zinc-200 focus:border-zinc-950'} text-sm text-zinc-800 rounded-xl px-4 py-4 outline-none appearance-none cursor-pointer transition-all`}
                       >
                         <option value="" disabled>Select Capability Vector Needed...</option>
@@ -232,24 +225,24 @@ export default function ContactPage() {
                         <option value="insurance">Multi-risk Operational Insurance</option>
                       </select>
                       <ChevronDown size={16} className="absolute right-4 top-5 pointer-events-none text-zinc-400" />
-                      {errors.service && <p className="text-[10px] text-red-500 font-medium mt-1 flex items-center gap-1"><AlertCircle size={10}/> {errors.service}</p>}
+                      {errors.service && <p className="text-[10px] text-red-500 font-medium mt-1 flex items-center gap-1"><AlertCircle size={10} /> {errors.service}</p>}
                     </div>
 
                     {/* Message Area */}
                     <div className="relative">
-                      <textarea 
+                      <textarea
                         id="msg" rows={4} placeholder=" " value={formData.msg}
-                        onChange={(e) => setFormData({...formData, msg: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, msg: e.target.value })}
                         className={`peer w-full bg-zinc-50 border ${errors.msg ? 'border-red-500 focus:border-red-500' : 'border-zinc-200 focus:border-zinc-950'} rounded-xl px-4 pt-6 pb-2 text-sm outline-none resize-none transition-all`}
                       />
                       <label htmlFor="msg" className="absolute left-4 top-4 text-xs font-medium text-zinc-400 pointer-events-none transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-zinc-500 origin-left transform scale-100 peer-focus:scale-90 select-none">
                         Brief Description of Operational Scope...
                       </label>
-                      {errors.msg && <p className="text-[10px] text-red-500 font-medium mt-1 flex items-center gap-1"><AlertCircle size={10}/> {errors.msg}</p>}
+                      {errors.msg && <p className="text-[10px] text-red-500 font-medium mt-1 flex items-center gap-1"><AlertCircle size={10} /> {errors.msg}</p>}
                     </div>
 
                     {/* Submit button */}
-                    <button 
+                    <button
                       type="submit"
                       className="w-full flex justify-center items-center gap-2 bg-zinc-950 hover:bg-zinc-800 text-white font-semibold text-sm py-4 rounded-xl transition-all active:scale-98 shadow-md"
                     >
@@ -259,7 +252,7 @@ export default function ContactPage() {
 
                   </motion.form>
                 ) : (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }}
                     className="py-16 text-center space-y-4"
                   >
@@ -285,13 +278,13 @@ export default function ContactPage() {
       <section id="map" className="py-20 bg-zinc-50 border-y border-zinc-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Map Placeholder Graphic Column */}
-            <div className="lg:col-span-7 bg-zinc-950 rounded-2xl aspect-[16/10] overflow-hidden relative shadow-xl border border-zinc-900 group">
+            <div className="lg:col-span-7 bg-zinc-950 rounded-2xl aspect-16/10 overflow-hidden relative shadow-xl border border-zinc-900 group">
               {/* Graphic Blueprint Netting representing localized geography grids */}
-              <div className="absolute inset-0 opacity-15 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:24px_24px]" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-zinc-950 via-zinc-900/40 to-transparent" />
-              
+              <div className="absolute inset-0 opacity-15 bg-[linear-linear(to_right,#808080_1px,transparent_1px),linear-linear(to_bottom,#808080_1px,transparent_1px)] bg-size-[24px_24px]" />
+              <div className="absolute inset-0 bg-linear-to-tr from-zinc-950 via-zinc-900/40 to-transparent" />
+
               {/* Fake UI Marker */}
               <div className="absolute top-1/2 left-1/3 -translate-y-1/2 -translate-x-1/2 flex flex-col items-center">
                 <div className="bg-white text-zinc-950 px-3 py-1.5 rounded-lg font-bold text-[11px] uppercase tracking-widest shadow-2xl border border-zinc-200 flex items-center gap-1.5 animate-bounce">
@@ -355,7 +348,7 @@ export default function ContactPage() {
               const isOpen = activeFaq === idx;
               return (
                 <div key={idx} className="border border-zinc-100 rounded-xl overflow-hidden bg-zinc-50/50 transition-all duration-300">
-                  <button 
+                  <button
                     onClick={() => setActiveFaq(isOpen ? null : idx)}
                     className="w-full p-5 text-left flex justify-between items-center gap-4 bg-white font-semibold text-sm sm:text-base text-zinc-900 focus:outline-none hover:bg-zinc-50/50"
                   >
@@ -364,10 +357,10 @@ export default function ContactPage() {
                       <ChevronDown size={16} className="text-zinc-400" />
                     </motion.div>
                   </button>
-                  
+
                   <AnimatePresence initial={false}>
                     {isOpen && (
-                      <motion.div 
+                      <motion.div
                         initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }}
                         transition={{ duration: 0.25, ease: 'easeInOut' }}
                         className="overflow-hidden bg-zinc-50"
@@ -387,7 +380,7 @@ export default function ContactPage() {
 
       {/* 5. EMERGENCY CONTACT BANNER */}
       <section className="py-20 bg-zinc-950 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-linear(circle_at_top,rgba(255,255,255,0.04),transparent_40%)]" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
           <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-1 rounded-full text-xs font-bold tracking-wider uppercase animate-pulse">
             <AlertCircle size={12} />
@@ -399,7 +392,7 @@ export default function ContactPage() {
           <p className="text-zinc-400 text-xs sm:text-sm max-w-md mx-auto font-light leading-relaxed">
             For ongoing missions undergoing immediate routing adjustments, track failure backups, or immediate custom clearances, bypass forms and hit live channels immediately.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4 max-w-sm mx-auto sm:max-w-none">
             <a href="tel:+255777123456" className="flex items-center justify-center gap-2 bg-white text-black font-bold text-xs uppercase tracking-wider px-6 py-4 rounded-xl shadow-xl hover:bg-zinc-200 active:scale-95 transition-all">
               <PhoneCall size={14} />

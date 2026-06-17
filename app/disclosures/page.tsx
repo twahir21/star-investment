@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { AlertTriangle, ArrowUpRight, Scale, Clock, ShieldAlert, Building2 } from 'lucide-react';
+import { ArrowUpRight, Building2 } from 'lucide-react';
+import AnimatedHero from '@/components/ui/AnimeHero';
 
 const disclosureSections = [
   { id: "corporate", title: "1. Corporate Structure" },
@@ -55,30 +55,23 @@ export default function DisclosuresPage() {
 
   return (
     <main className="bg-white text-gray-900 min-h-screen pt-16 selection:bg-zinc-950 selection:text-white">
-      
+
       {/* 1. HERO META HEADER */}
-      <section className="bg-zinc-50 border-b border-zinc-200/80 py-20 sm:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 bg-zinc-950 text-white px-3 py-1 rounded-md text-[10px] font-mono uppercase tracking-widest">
-              <AlertTriangle size={12} /> Statutory Transparency Manifest
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-950">
-              Legal & Risk Disclosures
-            </h1>
-            <p className="text-zinc-500 text-xs sm:text-sm font-mono flex items-center gap-4 pt-2 flex-wrap">
-              <span className="flex items-center gap-1"><Clock size={12} /> Publication Cycle: June 2026</span>
-              <span className="flex items-center gap-1"><ShieldAlert size={12} /> Public Accountability Protocol</span>
-            </p>
-          </div>
-        </div>
-      </section>
+      <AnimatedHero
+        topText="Statutory Transparency Manifest"
+        title={
+          <>
+            Legal & Risk Disclosures
+          </>
+        }
+        description="Publication Cycle: June 2026. Public Accountability Protocol"
+      />
 
       {/* 2. SPLIT ARCHITECTURE */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            
+
             {/* Left Column: Sticky Table of Contents */}
             <aside className="lg:col-span-3 lg:sticky lg:top-28 space-y-6 hidden lg:block">
               <div className="space-y-1">
@@ -92,11 +85,10 @@ export default function DisclosuresPage() {
                     <button
                       key={sec.id}
                       onClick={() => scrollToSection(sec.id)}
-                      className={`text-left text-xs font-semibold py-2.5 pl-4 border-l -ml-[1px] transition-all tracking-wide ${
-                        isActive 
-                          ? 'border-zinc-950 text-zinc-950 font-bold bg-zinc-50 rounded-r-md' 
+                      className={`text-left text-xs font-semibold py-2.5 pl-4 border-l -ml-px transition-all tracking-wide ${isActive
+                          ? 'border-zinc-950 text-zinc-950 font-bold bg-zinc-50 rounded-r-md'
                           : 'border-transparent text-zinc-400 hover:text-zinc-900 hover:border-zinc-300'
-                      }`}
+                        }`}
                     >
                       {sec.title}
                     </button>
@@ -115,7 +107,7 @@ export default function DisclosuresPage() {
 
             {/* Right Column: Deep Readable Typography */}
             <div className="lg:col-span-9 space-y-16 max-w-3xl">
-              
+
               {/* CORPORATE STRUCTURE */}
               <article id="corporate" className="space-y-4 scroll-mt-32">
                 <h2 className="text-xl font-bold tracking-tight text-zinc-950">1. Institutional & Corporate Structure</h2>
@@ -190,7 +182,7 @@ export default function DisclosuresPage() {
                   <p>
                     To cross-reference tracking registrations, verify active ZIPA certification numbers, or receive localized regulatory filing documentation, address our corporate compliance officers:
                   </p>
-                  
+
                   {/* Digital Disclosure Card Info */}
                   <div className="mt-6 p-6 border border-zinc-200 bg-zinc-50 rounded-xl space-y-3 max-w-md">
                     <div>

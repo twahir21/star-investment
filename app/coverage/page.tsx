@@ -3,15 +3,16 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { 
-  MapPin, 
-  Anchor, 
-  Plane, 
+import {
+  MapPin,
+  Anchor,
+  Plane,
   ShieldCheck,
-  Compass, 
+  Compass,
   Navigation,
   ArrowRight
 } from 'lucide-react';
+import AnimatedHero from '@/components/ui/AnimeHero';
 
 // --- DATA CONFIGURATIONS ---
 const coverageStats = [
@@ -103,24 +104,17 @@ export default function CoveragePage() {
 
   return (
     <main className="bg-white text-gray-900 overflow-x-hidden pt-16">
-      
+
       {/* 1. HERO SECTION */}
-      <section className="relative pt-36 pb-24 bg-zinc-950 text-white border-b border-zinc-900">
-        <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)] bg-[size:32px_32px]" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-6">
-            <span className="text-zinc-500 text-xs font-bold tracking-widest uppercase border border-zinc-800 bg-zinc-900/50 px-4 py-1.5 rounded-full inline-block">
-              Geographic Deployment
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]">
-              A Solid Infrastructure Across <span className="text-zinc-400">Tanzania & Zanzibar</span>
-            </h1>
-            <p className="text-zinc-400 text-sm sm:text-base font-light leading-relaxed max-w-2xl">
-              Star Investment maps out complete physical, structural, and institutional pathways. We operate fixed tactical assets across seven critical East African regions to guarantee continuous operational integrity.
-            </p>
-          </div>
-        </div>
-      </section>
+      <AnimatedHero
+        topText="Geographic Deployment"
+        title={
+          <>
+            A Solid Infrastructure Across <span className="text-zinc-400">Tanzania & Zanzibar</span>
+          </>
+        }
+        description="Star Investment maps out complete physical, structural, and institutional pathways. We operate fixed tactical assets across seven critical East African regions to guarantee continuous operational integrity."
+      />
 
       {/* 2. STATS REINFORCEMENT */}
       <section className="bg-zinc-50 border-b border-zinc-200/60 py-12">
@@ -139,25 +133,24 @@ export default function CoveragePage() {
       {/* 3. INTERACTIVE REGIONAL MATRIX */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Header Controls */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
             <div className="space-y-3">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900">Regional Capability Diagnostic</h2>
               <p className="text-zinc-500 text-sm">Filter our sovereign deployment zones to view dedicated asset listings on the ground.</p>
             </div>
-            
+
             {/* Filter Toggle Pills */}
             <div className="flex bg-zinc-100 p-1 rounded-xl border border-zinc-200/60 self-start lg:self-auto">
               {(['all', 'island', 'mainland'] as const).map((type) => (
                 <button
                   key={type}
                   onClick={() => setActiveFilter(type)}
-                  className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${
-                    activeFilter === type 
-                      ? 'bg-zinc-950 text-white shadow-sm' 
+                  className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${activeFilter === type
+                      ? 'bg-zinc-950 text-white shadow-sm'
                       : 'text-zinc-500 hover:text-zinc-950'
-                  }`}
+                    }`}
                 >
                   {type === 'all' ? 'All Sectors' : type === 'island' ? 'Islands' : 'Mainland'}
                 </button>
@@ -179,9 +172,9 @@ export default function CoveragePage() {
                   className="flex flex-col border border-zinc-100 rounded-2xl overflow-hidden bg-zinc-50/50 hover:bg-white hover:border-zinc-950 hover:shadow-xl transition-all duration-300 group"
                 >
                   {/* Fixed Aspect Image Wrapper */}
-                  <div className="aspect-[16/10] w-full bg-zinc-100 relative overflow-hidden">
-                    <Image 
-                      src={reg.image} 
+                  <div className="aspect-16/10 w-full bg-zinc-100 relative overflow-hidden">
+                    <Image
+                      src={reg.image}
                       alt={reg.name}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -193,7 +186,7 @@ export default function CoveragePage() {
                   </div>
 
                   {/* Context Block */}
-                  <div className="p-6 sm:p-8 flex-grow flex flex-col justify-between space-y-6">
+                  <div className="p-6 sm:p-8 grow flex flex-col justify-between space-y-6">
                     <div className="space-y-3">
                       <div>
                         <h3 className="font-bold text-lg text-zinc-900 flex items-center gap-2">
@@ -228,7 +221,7 @@ export default function CoveragePage() {
       <section className="py-24 bg-zinc-950 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.04),transparent_40%)]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           <div className="max-w-3xl space-y-4 mb-16">
             <span className="text-[10px] font-extrabold tracking-widest text-zinc-500 uppercase">Synchronized Transit</span>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Cross-Boundary Transport Integration</h2>
@@ -250,7 +243,7 @@ export default function CoveragePage() {
                   </div>
                   <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-light">{line.desc}</p>
                 </div>
-                
+
                 <div className="pt-4 border-t border-zinc-800/80 flex items-center gap-2 text-xs font-semibold text-zinc-500 group-hover:text-white transition-colors">
                   Continuous Tracking Enabled <ShieldCheck size={14} className="text-zinc-400 group-hover:text-white" />
                 </div>
@@ -267,7 +260,7 @@ export default function CoveragePage() {
             <div className="absolute top-0 right-0 p-8 text-zinc-200/40 pointer-events-none select-none">
               <Compass size={120} strokeWidth={0.5} />
             </div>
-            
+
             <div className="space-y-4 max-w-xl relative z-10 text-center lg:text-left">
               <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950">Deploy Outside Standard Sectors?</h3>
               <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed">

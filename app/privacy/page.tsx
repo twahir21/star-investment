@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Shield, ArrowUpRight, Scale, Clock, Lock } from 'lucide-react';
+import { ArrowUpRight, Lock } from 'lucide-react';
+import AnimatedHero from '@/components/ui/AnimeHero';
 
 const sections = [
   { id: "collection", title: "Information Collection" },
@@ -57,30 +57,23 @@ export default function PrivacyPolicyPage() {
 
   return (
     <main className="bg-white text-gray-900 min-h-screen pt-16 selection:bg-zinc-950 selection:text-white">
-      
+
       {/* 1. HERO META HEADER */}
-      <section className="bg-zinc-50 border-b border-zinc-200/80 py-20 sm:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 bg-zinc-950 text-white px-3 py-1 rounded-md text-[10px] font-mono uppercase tracking-widest">
-              <Scale size={12} /> Regulatory Directive
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-950">
-              Privacy & Protocol Policy
-            </h1>
-            <p className="text-zinc-500 text-xs sm:text-sm font-mono flex items-center gap-4 pt-2">
-              <span className="flex items-center gap-1"><Clock size={12} /> Last Structural Audit: June 2026</span>
-              <span className="flex items-center gap-1"><Shield size={12} /> Version 2.4 (Encrypted Framework)</span>
-            </p>
-          </div>
-        </div>
-      </section>
+      <AnimatedHero
+        topText="Regulatory Directive"
+        title={
+          <>
+            Privacy & Protocol Policy
+          </>
+        }
+        description="Last Structural Audit: June 2026. Version 2.4 (Encrypted Framework)"
+      />
 
       {/* 2. SPLIT ARCHITECTURE GRAPH */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            
+
             {/* Left Column: Fixed / Sticky Table of Contents */}
             <aside className="lg:col-span-3 lg:sticky lg:top-28 space-y-6 hidden lg:block">
               <div className="space-y-1">
@@ -94,11 +87,10 @@ export default function PrivacyPolicyPage() {
                     <button
                       key={sec.id}
                       onClick={() => scrollToSection(sec.id)}
-                      className={`text-left text-xs font-semibold py-3 pl-4 border-l -ml-[1px] transition-all uppercase tracking-wider ${
-                        isActive 
-                          ? 'border-zinc-950 text-zinc-950 font-bold bg-zinc-50 rounded-r-md' 
+                      className={`text-left text-xs font-semibold py-3 pl-4 border-l -ml-px transition-all uppercase tracking-wider ${isActive
+                          ? 'border-zinc-950 text-zinc-950 font-bold bg-zinc-50 rounded-r-md'
                           : 'border-transparent text-zinc-400 hover:text-zinc-900 hover:border-zinc-300'
-                      }`}
+                        }`}
                     >
                       {sec.title}
                     </button>
@@ -117,7 +109,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Right Column: Deep Readable Legal Typography */}
             <div className="lg:col-span-9 space-y-20 max-w-3xl">
-              
+
               {/* SECTION 1 */}
               <article id="collection" className="space-y-4 scroll-mt-32">
                 <h2 className="text-2xl font-bold tracking-tight text-zinc-950 flex items-center gap-3">
@@ -227,7 +219,7 @@ export default function PrivacyPolicyPage() {
                   <p>
                     For regulatory verifications, data erasure executions, or to receive official compliance documentation, route queries directly to our independent audit desk.
                   </p>
-                  
+
                   {/* Digital Legal Card Info */}
                   <div className="mt-6 p-6 border border-zinc-200 bg-zinc-50 rounded-xl space-y-3 max-w-md">
                     <div>

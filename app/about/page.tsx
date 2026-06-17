@@ -3,13 +3,13 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
-import { 
-  Target, 
-  Eye, 
-  Award, 
-  Users, 
-  Briefcase, 
-  ShieldCheck, 
+import {
+  Target,
+  Eye,
+  Award,
+  Users,
+  Briefcase,
+  ShieldCheck,
   TrendingUp,
   Fingerprint,
   Layers,
@@ -19,6 +19,8 @@ import {
   CheckCircle
 } from 'lucide-react';
 import { FaLinkedin } from 'react-icons/fa6';
+import StrategicJourney from '@/components/Timeline';
+import AnimatedHero from '@/components/ui/AnimeHero';
 
 // --- DATA CONFIGURATIONS ---
 const timelineHistory = [
@@ -108,32 +110,25 @@ export default function AboutPage() {
 
   return (
     <main className="bg-white text-gray-900 overflow-x-hidden">
-      
+
       {/* 1. HERO BANNER */}
-      <section className="relative pt-40 pb-24 bg-zinc-950 text-white border-b border-zinc-900">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px]" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="text-zinc-500 text-xs font-bold tracking-widest uppercase bg-white/5 border border-white/10 px-4 py-1.5 rounded-full">
-              Corporate Profile
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mt-6 mb-6">
-              The Architecture of <span className="text-zinc-400">Trusted Logistics</span>
-            </h1>
-            <p className="text-zinc-400 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed">
-              Star Investment bridges the gap between challenging local infrastructure and the world-class operational metrics demanded by international institutions.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <AnimatedHero
+        topText="Corporate Profile"
+        title={
+          <>
+            The Architecture of <span className="text-zinc-400">Trusted Logistics</span>
+          </>
+        }
+        description="Star Investment bridges the gap between challenging local infrastructure and the world-class operational metrics demanded by international institutions."
+      />
 
       {/* 2. VISION & MISSION */}
       <section className="py-24 bg-white relative z-20 -mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            
+
             {/* Vision Card */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               className="bg-zinc-50 p-8 sm:p-12 rounded-2xl border border-zinc-100 flex flex-col justify-between space-y-8 hover:shadow-xl transition-all duration-300"
             >
@@ -149,7 +144,7 @@ export default function AboutPage() {
             </motion.div>
 
             {/* Mission Card */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               className="bg-zinc-950 text-white p-8 sm:p-12 rounded-2xl border border-zinc-900 flex flex-col justify-between space-y-8 hover:shadow-xl transition-all duration-300"
             >
@@ -169,54 +164,7 @@ export default function AboutPage() {
       </section>
 
       {/* 3. COMPANY HISTORY (ALTERNATING TIMELINE) */}
-      <section className="py-24 bg-zinc-50 border-y border-zinc-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900">Our Strategic Journey</h2>
-            <p className="text-zinc-500 text-sm">A timeline marked by systematic capacity development and structural excellence.</p>
-          </div>
-
-          <div className="relative space-y-16 before:absolute before:inset-0 before:left-4 lg:before:left-1/2 before:w-[2px] before:bg-zinc-200">
-            {timelineHistory.map((item, index) => {
-              const isEven = index % 2 === 0;
-              return (
-                <div key={index} className={`relative flex flex-col lg:flex-row items-start ${isEven ? 'lg:flex-row-reverse' : ''} gap-8 lg:gap-0`}>
-                  
-                  {/* Timeline Node Center Marker */}
-                  <div className="absolute left-4 lg:left-1/2 w-4 h-4 rounded-full bg-zinc-950 border-4 border-white -translate-x-1.5 lg:-translate-x-2 top-2 z-10" />
-
-                  {/* Text Container Column */}
-                  <motion.div 
-                    initial={{ opacity: 0, x: isEven ? 30 : -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-                    className="w-full lg:w-1/2 pl-12 lg:pl-0 lg:px-12 space-y-3"
-                  >
-                    <span className="text-sm font-extrabold font-mono text-zinc-400">{item.year}</span>
-                    <h4 className="text-xl font-bold text-zinc-950">{item.title}</h4>
-                    <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed max-w-md">{item.desc}</p>
-                  </motion.div>
-
-                  {/* Image Container Column */}
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
-                    className="w-full lg:w-1/2 pl-12 lg:pl-0 lg:px-12"
-                  >
-                    <div className="relative aspect-video max-w-md rounded-xl overflow-hidden bg-zinc-200 group shadow-md border border-zinc-100">
-                      <Image 
-                        src={item.img} 
-                        alt={item.title} 
-                        fill 
-                        sizes="(max-width: 1024px) 100vw, 40vw"
-                        className="object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"
-                      />
-                    </div>
-                  </motion.div>
-
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <StrategicJourney timelineHistory={timelineHistory} />
 
       {/* 4. STRATEGIC OBJECTIVES / GOALS */}
       <section className="py-24 bg-white">
@@ -248,7 +196,7 @@ export default function AboutPage() {
             {achievements.map((ach, idx) => {
               const Icon = ach.icon;
               return (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.05 }}
                   key={idx} className="text-center space-y-2 border-r border-zinc-900 last:border-0"
                 >
@@ -299,18 +247,18 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {team.map((member, index) => (
-              <motion.div 
+              <motion.div
                 variants={fv} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: index * 0.1 }}
                 key={index} className="bg-white rounded-2xl border border-zinc-200/60 overflow-hidden shadow-sm flex flex-col group"
               >
                 {/* Fixed Square Frame for Professional Portrait */}
                 <div className="aspect-4/5 w-full bg-zinc-100 relative overflow-hidden">
-                  <Image 
-                    src={member.img} 
-                    alt={member.name} 
-                    fill 
+                  <Image
+                    src={member.img}
+                    alt={member.name}
+                    fill
                     sizes="(max-width: 768px) 100vw, 30vw"
-                    className="object-cover filter grayscale contrast-110 group-hover:scale-102 transition-transform duration-500" 
+                    className="object-cover filter grayscale contrast-110 group-hover:scale-102 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6 sm:p-8 grow flex flex-col justify-between space-y-4">
@@ -333,7 +281,7 @@ export default function AboutPage() {
       <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-            
+
             <div className="md:col-span-4 space-y-4">
               <Quote size={32} className="text-zinc-300" />
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900">Institutional Endorsements</h2>
