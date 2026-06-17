@@ -80,7 +80,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="bg-white text-gray-900 overflow-x-hidden pt-16">
+    <main className="bg-white text-gray-900 overflow-x-hidden">
 
       {/* 1. HERO BANNER */}
       <AnimatedHero

@@ -59,7 +59,7 @@ export default function TermsConditionsPage() {
   };
 
   return (
-    <main className="bg-white text-gray-900 min-h-screen pt-16 selection:bg-zinc-950 selection:text-white">
+    <main className="bg-white text-gray-900 min-h-screen selection:bg-zinc-950 selection:text-white">
 
       {/* 1. HERO META HEADER */}
       <AnimatedHero

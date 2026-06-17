@@ -91,7 +91,7 @@ export default function ServicesPage() {
   const currentService = capabilities.find(c => c.id === selectedService) || capabilities[0];
 
   return (
-    <main className="bg-white text-gray-900 overflow-x-hidden pt-16">
+    <main className="bg-white text-gray-900 overflow-x-hidden">
 
       {/* 1. EDITORIAL HERO BANNER */}
       <AnimatedHero
