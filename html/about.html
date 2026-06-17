@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | STAR INVESTMENT (ZANZIBAR) LIMITED</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .editorial-inset {
+            margin-left: calc(100% / 12 * 2);
+            margin-right: calc(100% / 12 * 2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .stats-border {
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .stats-border:last-child {
+            border-right: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#001946",
+                        "surface-dim": "#ccdbf4",
+                        "primary-fixed-dim": "#b9c7e4",
+                        "on-primary-container": "#76849f",
+                        "surface": "#f8f9ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-container": "#002f76",
+                        "primary": "#000000",
+                        "on-surface-variant": "#44474d",
+                        "on-primary-fixed": "#0d1c32",
+                        "surface-container-highest": "#d5e3fd",
+                        "surface-tint": "#515f78",
+                        "on-background": "#0d1c2f",
+                        "secondary-container": "#6c98ff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#75777e",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#e9c176",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "on-surface": "#0d1c2f",
+                        "on-error": "#ffffff",
+                        "secondary": "#2559bd",
+                        "secondary-fixed": "#dae2ff",
+                        "inverse-on-surface": "#ebf1ff",
+                        "inverse-surface": "#233144",
+                        "tertiary-fixed": "#ffdea5",
+                        "surface-variant": "#d5e3fd",
+                        "outline-variant": "#c5c6cd",
+                        "surface-container-high": "#dde9ff",
+                        "tertiary-container": "#261900",
+                        "primary-container": "#0d1c32",
+                        "on-primary-fixed-variant": "#39475f",
+                        "primary-fixed": "#d6e3ff",
+                        "on-tertiary-fixed": "#261900",
+                        "on-tertiary-container": "#a17f3b",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#00419e",
+                        "background": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#b1c5ff",
+                        "tertiary": "#000000",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#e6eeff",
+                        "inverse-primary": "#b9c7e4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "stack-md": "16px",
+                        "section-padding": "80px",
+                        "stack-lg": "32px",
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "button": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "button": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-on-primary-fixed/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm shadow-primary/5 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">
+                STAR INVESTMENT
+            </div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="font-button text-button text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors" href="#">Home</a>
+<a class="font-button text-button text-secondary dark:text-secondary-fixed border-b-2 border-secondary pb-1" href="#">About Us</a>
+<a class="font-button text-button text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors" href="#">Services</a>
+<a class="font-button text-button text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors" href="#">Coverage</a>
+<a class="font-button text-button text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="font-button text-button text-secondary px-4 py-2 hover:opacity-90 transition-opacity hidden sm:block">Contact Us</button>
+<button class="font-button text-button bg-primary text-white px-6 py-3 hover:opacity-90 transition-opacity">Request Consultation</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-[716px] min-h-[500px] flex items-center pt-20 overflow-hidden bg-primary">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" data-alt="A grand cinematic architectural shot of a modern glass skyscraper reflecting a deep blue sky at twilight. The lighting is low-key and prestigious, emphasizing sharp vertical lines and a sense of corporate heritage and power. The composition is clean and expansive, utilizing a professional navy and charcoal palette to project stability and institutional grade security." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZw57UEwUbWpeVuEHb_cEvNN7Whu9SYZD-XdcPh5JCgp_Qr3XzN37Qcb0C3vLrZuTlTthlLkq_TAtk7svhC8LBGVY_r98kksa2HNqIqZIC5elJnfCZdasIc5xdTUvD9M8WHQ78e0ggA_1h6_6nFy_3cbT2YorihBLPDFso88DudJkJNUp2iHwVU8dZ2je9kPIxnkaUC7ClkDAi2BHbEu2zMvK2EF6KXnRTBkuSB9QOz1EdPYX3dhS6grDNA_IAd8OrAuDYs1QOEkqU"/>
+</div>
+<div class="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="max-w-3xl">
+<p class="font-label-caps text-label-caps text-secondary-fixed-dim mb-stack-md">HERITAGE &amp; EXCELLENCE</p>
+<h1 class="font-display-lg text-display-lg text-white mb-stack-lg">Architecting the Future of Global Investment</h1>
+<p class="font-body-lg text-body-lg text-white/80 max-w-2xl">
+                    For decades, STAR INVESTMENT (ZANZIBAR) LIMITED has served as a cornerstone of stability, bridging the gap between local potential and global institutional capital.
+                </p>
+</div>
+</div>
+</header>
+<!-- Our Story Timeline -->
+<section class="py-section-padding px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-headline-md text-headline-md mb-stack-md">Our Legacy</h2>
+<div class="w-20 h-1 bg-secondary mx-auto"></div>
+</div>
+<div class="space-y-24 relative">
+<!-- Timeline Center Line -->
+<div class="absolute left-1/2 top-0 bottom-0 w-px bg-outline-variant hidden md:block"></div>
+<!-- 2005 -->
+<div class="flex flex-col md:flex-row items-center gap-gutter">
+<div class="md:w-1/2 text-right order-2 md:order-1">
+<span class="font-headline-sm text-headline-sm text-secondary block mb-2">2005</span>
+<h3 class="font-headline-sm text-headline-sm mb-stack-sm">The Foundation</h3>
+<p class="text-on-surface-variant">Established in Zanzibar with a vision to catalyze infrastructure development through structured private equity and sovereign partnerships.</p>
+</div>
+<div class="z-10 bg-surface border-4 border-white shadow-md rounded-full p-2 order-1 md:order-2">
+<span class="material-symbols-outlined text-secondary scale-125">foundation</span>
+</div>
+<div class="md:w-1/2 order-3">
+<img class="w-full h-64 object-cover rounded shadow-sm" data-alt="A vintage-toned black and white photograph showing a formal board meeting in a high-end wood-paneled office. The atmosphere is traditional and serious, capturing the founding moment of a financial institution. The lighting is soft and focused on the center of the mahogany table, symbolizing a historic milestone of growth and professional integrity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7k3kQLL1olJ2c7pcUI4GSMhBbAxKbGKzvY17nb1jEDQvpatW2CJSNH3b1-R4O3eNfDz_aqa6fkSwm74oo_K7noCVQCYleynGKnMlfpcSJO7TSLS3Yy7Y33Tod1VEb2G43LwUPWPhT6TAdO2Lma6ErSd3EC0UPDns1YWrGWpkTeVwBX-eVaqXuKCL5tB0NzFt1tXsPwUT6O_AmofSEuaVnfwjjJ4MaUiYra_XpGwLQ42I083sGH0bc0_Maicje0URf3OTJoNLvIlGy"/>
+</div>
+</div>
+<!-- 2012 -->
+<div class="flex flex-col md:flex-row items-center gap-gutter">
+<div class="md:w-1/2 order-3 md:order-1">
+<img class="w-full h-64 object-cover rounded shadow-sm" data-alt="A clean, minimalist high-tech workspace with multiple screens displaying global financial data and market trends in shades of blue and gold. The scene projects a sense of expansion and technological advancement within a traditional financial framework. The lighting is modern and bright, highlighting a professional environment of innovation and strategic growth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALhiX2QqpGZWaOfqmAZ99td465kwV2Wx4e4nGSaUTT8ehcVPHh8sO7_UMMQgJqKjbokOQTs9eFk1bw2j4mFyXt4PLGZ3O6Y-MGhuWsfHmBhnZu7P9Q5EAbozq7T0udhP6J17sz53RbCT2G2baDN1d2KnURYtt807lg8NrRw_dAoV9gW9WHu5YuEdNkJhInAelRxz_d7Hpp3Q8KK6VVOp-UZwZEpPEg-DhWxV1d27rlqf9gBswevvtSIX_a97GtNYDtBc2gJ42BtfOF"/>
+</div>
+<div class="z-10 bg-surface border-4 border-white shadow-md rounded-full p-2 order-1 md:order-2">
+<span class="material-symbols-outlined text-secondary scale-125">trending_up</span>
+</div>
+<div class="md:w-1/2 text-left order-2 md:order-3">
+<span class="font-headline-sm text-headline-sm text-secondary block mb-2">2012</span>
+<h3 class="font-headline-sm text-headline-sm mb-stack-sm">Regional Expansion</h3>
+<p class="text-on-surface-variant">Successfully expanded operations across East African markets, diversifying into logistics and real estate development portfolios.</p>
+</div>
+</div>
+<!-- 2024 -->
+<div class="flex flex-col md:flex-row items-center gap-gutter">
+<div class="md:w-1/2 text-right order-2 md:order-1">
+<span class="font-headline-sm text-headline-sm text-secondary block mb-2">2024</span>
+<h3 class="font-headline-sm text-headline-sm mb-stack-sm">Global Diversification</h3>
+<p class="text-on-surface-variant">Integrating sustainable ESG frameworks into our global investment strategy, managing over $2B in multi-sector assets.</p>
+</div>
+<div class="z-10 bg-surface border-4 border-white shadow-md rounded-full p-2 order-1 md:order-2">
+<span class="material-symbols-outlined text-secondary scale-125">public</span>
+</div>
+<div class="md:w-1/2 order-3">
+<img class="w-full h-64 object-cover rounded shadow-sm" data-alt="An editorial shot of a modern, eco-friendly luxury office building with lush greenery integrated into its glass facade. The lighting is golden hour sunshine, creating a bright and sustainable feeling. The composition signifies the future of ethical investment, blending premium architectural design with global responsibility and institutional heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqJJCjIPmbxsxVebUK-5ZH8xtO0Prsmh-WxZQ5K7Hfw7GOb2m3hA68Mm6NBKWX4XbJu-6ESBC4h1uSMZyZ9_qD-kZ4wfQ6KLBWmP2HEXZjB9l-HSKCWONLvEY2yN8MDe8a-5aueLUZExY-qZHZ6mw7APO5tner4M7MiVYFT6pxS4vxzUeNjyPlSu9I3W2-0rnq6zl3J3nrOo4QQofAyjKcQJUHAp9TMeWdmOVFSE3iXfwaSGpUa3MhG1ON3cUrbQXaXn1gZDn16YMd"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Vision & Mission -->
+<section class="bg-primary-container py-section-padding overflow-hidden relative">
+
+<div class="relative z-10 px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="glass-card p-12 rounded-xl border-t-2 border-tertiary-fixed">
+<span class="material-symbols-outlined text-on-primary-fixed mb-stack-lg scale-150">visibility</span>
+<h2 class="font-headline-md text-headline-md mb-stack-md">Our Vision</h2>
+<p class="font-body-lg text-body-lg text-on-primary-fixed-variant italic leading-relaxed">
+                        "To be the foremost gateway for global investment in Africa, recognized for our unwavering commitment to ethical growth, transparency, and the creation of intergenerational wealth for our partners and the communities we serve."
+                    </p>
+</div>
+<div class="glass-card p-12 rounded-xl border-t-2 border-secondary">
+<span class="material-symbols-outlined text-on-primary-fixed mb-stack-lg scale-150">rocket_launch</span>
+<h2 class="font-headline-md text-headline-md mb-stack-md">Our Mission</h2>
+<p class="font-body-lg text-body-lg text-on-primary-fixed-variant leading-relaxed">
+                        To identify, structure, and manage high-impact investment opportunities through rigorous risk management and strategic advisory, ensuring consistent value delivery in an ever-evolving global economy.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Achievements Section -->
+<section class="py-section-padding bg-white border-b border-outline-variant/20">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-gutter">
+<div class="text-center stats-border">
+<p class="font-display-lg text-display-lg text-primary mb-1">150+</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">PROJECTS</p>
+</div>
+<div class="text-center stats-border">
+<p class="font-display-lg text-display-lg text-secondary mb-1">500+</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">CLIENTS</p>
+</div>
+<div class="text-center md:stats-border lg:stats-border">
+<p class="font-display-lg text-display-lg text-primary mb-1">45</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">PARTNERS</p>
+</div>
+<div class="text-center stats-border lg:stats-border">
+<p class="font-display-lg text-display-lg text-secondary mb-1">12</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">COVERAGE</p>
+</div>
+<div class="text-center stats-border">
+<p class="font-display-lg text-display-lg text-primary mb-1">8</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">INDUSTRIES</p>
+</div>
+<div class="text-center">
+<p class="font-display-lg text-display-lg text-secondary mb-1">19</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">YEARS</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Values -->
+<section class="py-section-padding px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-20">
+<p class="font-label-caps text-label-caps text-secondary mb-stack-sm">THE FOUNDATION OF OUR FIRM</p>
+<h2 class="font-headline-md text-headline-md">Our Core Values</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<div class="p-8 border border-outline-variant/30 hover:border-secondary transition-all duration-300 group">
+<span class="material-symbols-outlined text-secondary mb-4 group-hover:scale-110 transition-transform">verified</span>
+<h4 class="font-headline-sm text-headline-sm mb-stack-sm">Professionalism</h4>
+<p class="text-on-surface-variant">Maintaining the highest standards of conduct and expertise in every interaction.</p>
+</div>
+<div class="p-8 border border-outline-variant/30 hover:border-secondary transition-all duration-300 group">
+<span class="material-symbols-outlined text-secondary mb-4 group-hover:scale-110 transition-transform">gavel</span>
+<h4 class="font-headline-sm text-headline-sm mb-stack-sm">Integrity</h4>
+<p class="text-on-surface-variant">Upholding ethical principles and absolute transparency in financial reporting.</p>
+</div>
+<div class="p-8 border border-outline-variant/30 hover:border-secondary transition-all duration-300 group">
+<span class="material-symbols-outlined text-secondary mb-4 group-hover:scale-110 transition-transform">star</span>
+<h4 class="font-headline-sm text-headline-sm mb-stack-sm">Excellence</h4>
+<p class="text-on-surface-variant">Striving for perfection in analysis, execution, and long-term asset management.</p>
+</div>
+<div class="p-8 border border-outline-variant/30 hover:border-secondary transition-all duration-300 group">
+<span class="material-symbols-outlined text-secondary mb-4 group-hover:scale-110 transition-transform">lightbulb</span>
+<h4 class="font-headline-sm text-headline-sm mb-stack-sm">Innovation</h4>
+<p class="text-on-surface-variant">Adapting to market shifts with creative financial structures and digital integration.</p>
+</div>
+<div class="p-8 border border-outline-variant/30 hover:border-secondary transition-all duration-300 group">
+<span class="material-symbols-outlined text-secondary mb-4 group-hover:scale-110 transition-transform">security</span>
+<h4 class="font-headline-sm text-headline-sm mb-stack-sm">Reliability</h4>
+<p class="text-on-surface-variant">A steadfast partner in volatile markets, ensuring capital preservation and growth.</p>
+</div>
+<div class="p-8 border border-outline-variant/30 hover:border-secondary transition-all duration-300 group">
+<span class="material-symbols-outlined text-secondary mb-4 group-hover:scale-110 transition-transform">handshake</span>
+<h4 class="font-headline-sm text-headline-sm mb-stack-sm">Partnership</h4>
+<p class="text-on-surface-variant">Building enduring relationships based on mutual trust and shared strategic goals.</p>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="py-section-padding bg-surface-container-low">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-20 text-center">
+<h2 class="font-headline-md text-headline-md mb-stack-sm">Executive Leadership</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Our leadership team brings together decades of experience across global banking, sovereign wealth management, and strategic infrastructure development.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Leader 1 -->
+<div class="bg-white p-2 shadow-sm border border-outline-variant/20 overflow-hidden group">
+<div class="relative overflow-hidden mb-6 aspect-[4/5]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A formal executive portrait of a senior male leader in a bespoke navy suit. The style is classic editorial corporate, with a clean background and professional studio lighting. The image conveys authority, experience, and heritage, fitting for a chief executive of a prestigious investment firm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoqba4BMzJUik7PMnJIrn5n4Gq_N2fTjqPVeka3xd1bwaI-YLpcFr2l4qlb5GFFpZoYrJJJlCEDcrfplekWUrax0pNq7-sQhbvkcwkgnCRL5XD3BfC73yZac9ogEuSj4-KIPAtZpDC0lvAFwltsDHLf2uhda7vXGdCT7IYfdU_kNbAwMUUKxrLxyVASZE4e1BpG9ESqzv11ARj3WA_EtS6Pz_yUWm73ibOxisIlprTwYa8M5vXkSbDuUudC5jGdZhyJ8aIiokqPSCN"/>
+</div>
+<div class="p-4">
+<p class="font-label-caps text-label-caps text-secondary mb-1">CHAIRMAN &amp; CEO</p>
+<h4 class="font-headline-sm text-headline-sm mb-4">Dr. Faisal Al-Said</h4>
+<p class="text-on-surface-variant text-body-md">A visionary in emerging market finance, Dr. Faisal has spearheaded major infrastructure projects across the GCC and East Africa for over 25 years.</p>
+</div>
+</div>
+<!-- Leader 2 -->
+<div class="bg-white p-2 shadow-sm border border-outline-variant/20 overflow-hidden group">
+<div class="relative overflow-hidden mb-6 aspect-[4/5]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A sophisticated professional portrait of a female executive in a light-colored corporate attire. The lighting is high-key and bright, projecting clarity and transparency. The composition is balanced and elegant, emphasizing her role as a leader in a modern, innovation-focused financial institution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYSIrINvZ99sP64sp5i0WcRbULS60ktQLL9POFNol5B66pxjZa06IqVgH7W1Md525MSrvAOl2_ltPPexwDJh54Qr2lihv7wx6nboSOJafmQmWKy1PAUxJTFd3Sj8jkxFuj8bJLwXpn1G4-NVgEeQwe7eScIOwPfCHyNUfUb-v3ZRgXUbmPlGepKzL3TR7N8wj9E7tJuyo92uIvGtlnP_RPy07js2ZLzNjxnsLyUW6k3M2tkJFlntyAIvSzoap8PUMc0jsvsxef5zLE"/>
+</div>
+<div class="p-4">
+<p class="font-label-caps text-label-caps text-secondary mb-1">CHIEF OPERATIONS OFFICER</p>
+<h4 class="font-headline-sm text-headline-sm mb-4">Sarah Jenkins</h4>
+<p class="text-on-surface-variant text-body-md">Formerly of a tier-one global bank, Sarah oversees operational excellence and the integration of advanced fintech solutions across our portfolio.</p>
+</div>
+</div>
+<!-- Leader 3 -->
+<div class="bg-white p-2 shadow-sm border border-outline-variant/20 overflow-hidden group">
+<div class="relative overflow-hidden mb-6 aspect-[4/5]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="An editorial portrait of a mid-career male executive in a smart casual business outfit. The setting is a bright, modern office corridor with soft natural light. He represents the innovation and energy within the firm's leadership, maintaining a prestigious and professional appearance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCLUyDB2VB6SLH2rCdVppuFvdM-uBYovj_9qsUmk1jKeEfGCulDz3EkCcbqI2XVKJmDFwut2mHgJG-IY-wt-Wc0_LWDaa90vid5EUUOug-FCgHREau-Z9o8USJqrpooW4ZwH4V_P7XxmskP6pNKBOOcfAzviE_vhydZ43WsH5X8aOZnEeFPM1za-fObmSPGgx4rBeymAN6ME5M15Ig4w3OTqonkJEeE6QtAi86gEMHskLal_q_AssSo_raki6mxtmJF2aa6vXzPEJO"/>
+</div>
+<div class="p-4">
+<p class="font-label-caps text-label-caps text-secondary mb-1">HEAD OF STRATEGY</p>
+<h4 class="font-headline-sm text-headline-sm mb-4">Marcus T. O'Neil</h4>
+<p class="text-on-surface-variant text-body-md">Marcus leads our multi-sector asset diversification strategy, focusing on high-yield opportunities in emerging technology and logistics.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-black text-on-primary-fixed w-full pt-section-padding pb-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-on-primary mb-stack-lg">STAR INVESTMENT</div>
+<p class="text-surface-variant/70 mb-stack-lg">Global financial gateway bridging local potential with international institutional capital.</p>
+<div class="flex gap-4">
+<a class="text-surface-variant/70 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-surface-variant/70 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-surface-variant/70 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">call</span></a>
+</div>
+</div>
+<div>
+<h5 class="font-button text-button text-white mb-stack-lg uppercase tracking-wider">Company</h5>
+<ul class="space-y-4">
+<li><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">Leadership</a></li>
+<li><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">Careers</a></li>
+<li><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-button text-button text-white mb-stack-lg uppercase tracking-wider">Services</h5>
+<ul class="space-y-4">
+<li><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">Asset Management</a></li>
+<li><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">Private Equity</a></li>
+<li><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">Project Finance</a></li>
+<li><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">Strategic Advisory</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-button text-button text-white mb-stack-lg uppercase tracking-wider">Contact</h5>
+<ul class="space-y-4 text-surface-variant/70">
+<li>12th Floor, Star Tower, Stone Town</li>
+<li>Zanzibar, Tanzania</li>
+<li>info@starinvestment.com</li>
+<li>+255 24 000 0000</li>
+</ul>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-white/10 px-margin-desktop max-w-container-max mx-auto text-surface-variant/50 text-sm">
+<div class="flex flex-col md:flex-row justify-between gap-4">
+<p>© 2024 STAR INVESTMENT (ZANZIBAR) LIMITED. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-white transition-colors" href="#">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for navigation glass effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.remove('h-20');
+                nav.classList.add('h-16');
+            } else {
+                nav.classList.remove('py-2');
+                nav.classList.add('h-20');
+                nav.classList.remove('h-16');
+            }
+        });
+
+        // Simple Intersection Observer for timeline animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'ease-out');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
