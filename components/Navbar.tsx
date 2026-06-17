@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Star, ArrowRight } from 'lucide-react';
 
 const navItems = [
-  { name: 'Home', href: '#' },
-  { name: 'About Us', href: '#' },
-  { name: 'Services', href: '#' },
-  { name: 'Coverage', href: '#' },
-  { name: 'Contact', href: '#' },
+  { name: 'Home', href: '/' },
+  { name: 'About Us', href: '/about' },
+  { name: 'Services', href: '/services' },
+  { name: 'Coverage', href: '/coverage' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {

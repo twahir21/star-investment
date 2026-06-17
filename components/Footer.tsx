@@ -11,10 +11,10 @@ import { FaInstagram, FaFacebookF, FaXTwitter, FaLinkedinIn } from "react-icons/
 
 const footerLinks = {
   company: [
-    { name: 'About Us', href: '#' },
+    { name: 'About Us', href: '/about' },
     { name: 'Careers', href: '#' },
     { name: 'News & Insights', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Contact', href: '/contact' },
   ],
   services: [
     { name: 'Wealth Management', href: '#' },
@@ -23,10 +23,10 @@ const footerLinks = {
     { name: 'Private Banking', href: '#' },
   ],
   legal: [
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Terms of Service', href: '#' },
-    { name: 'Cookie Policy', href: '#' },
-    { name: 'Disclosures', href: '#' },
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Cookie Policy', href: '/cookie-policy' },
+    { name: 'Disclosures', href: 'disclosures' },
   ],
 };
 
